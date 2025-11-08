@@ -25,10 +25,12 @@ private:
   std::string description{};
   std::string deadline{};
 public:
-  task();
+  task(std::string name);
 
   void saveTask(); // placeholder
   void deleteTask(){} // placeholder
+
+  void printTaskDetails(); // placeholder
 
   // Getters and setters
   inline std::string getName(){return name;}
@@ -39,4 +41,5 @@ public:
   inline void setDescription(std::string s){description = s;}
   inline std::string getDeadline(){return deadline;}
   inline void setDeadline(std::string s){deadline = s;}
+
 };
