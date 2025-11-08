@@ -22,9 +22,7 @@ private:
   std::string name{};
   std::string password{};
 public:
-  user(); // Constructor for user registration
-  user(std::string name, std::string pass)
-
+  user(std::string name, std::string pass);
 
   void saveUser();
   void deleteUser();
