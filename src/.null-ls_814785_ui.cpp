@@ -105,3 +105,10 @@ void showMainMenu() {                                   // Function to show main
         }
     }
 }
+
+
+int main() {                                        // Main function
+    showloginMenu();                               // Calls showloginMenu function
+    showMainMenu();                                // Calls showMainMenu function
+    return 0;                                      // Returns 0 to indicate successful execution
+}
