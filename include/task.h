@@ -41,5 +41,8 @@ public:
   inline void setDescription(std::string s){description = s;}
   inline std::string getDeadline(){return deadline;}
   inline void setDeadline(std::string s){deadline = s;}
+  
+  bool signupUser(string username);
+  bool LoginUser(string username);
 
 };

@@ -1,4 +1,5 @@
 #include "../include/ui.h"
+#include "../include/task.h"
 
 // Dummy functions to simulate user login and signup
 bool LoginUser(string username) { 
@@ -11,12 +12,24 @@ bool signupUser(string username) {
   cout << " Function signupUser called.\n" << endl;
   return true;
 }
-void viewtasks() { cout << " Function viewtasks is formed" << endl; }
-void addtasks() { cout << " Function addTasks is formed" << endl; }
-void edittasks() { cout << " Function editTasks is formed" << endl; }
-void deletetasks() { cout << " Function deleteTasks is formed" << endl; }
-void switchuser() { cout << " Function switchuser is formed" << endl; }
-void logoutandquit() { cout << " Function logoutandquit is formed" << endl; }
+void viewtasks() {
+  cout << " Function viewtasks is formed" << endl;
+}
+void addtasks() { 
+  cout << " Function addTasks is formed" << endl;
+}
+void edittasks() {
+  cout << " Function editTasks is formed" << endl;
+}
+void deletetasks() {
+  cout << " Function deleteTasks is formed" << endl;
+}
+void switchuser() {
+  cout << " Function switchuser is formed" << endl;
+}
+void logoutandquit() {
+  cout << " Function logoutandquit is formed" << endl;
+}
 string currentUser = ""; 
 
 void showloginMenu() {
