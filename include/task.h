@@ -17,18 +17,33 @@
 */
 #pragma once
 #include <string>
+#include <iostream>
+using std::string;
 
-class task {
+class Task {
 private:
   std::string name{};
   std::string status{};
   std::string description{};
   std::string deadline{};
 public:
-  task();
+  // Functions
+  void viewTasks();
+  void addTasks();
+  void editTasks();
+  void deleteTasks();
 
-  void saveTask(); // placeholder
-  void deleteTask(){} // placeholder
+  // Data Storage
+  void initaliseTasks();
+  void saveTask();
+  void deleteTask();
+  void printTaskDetails();
+
+  // Debug Functions
+  
+
+  // Constructors
+  task(std::string name);
 
   // Getters and setters
   inline std::string getName(){return name;}

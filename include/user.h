@@ -16,20 +16,30 @@
 */
 #pragma once
 #include <string>
+using std::string;
 
-class user{
+class User{
 private:
-  std::string name{};
-  std::string password{};
+  string name{};
+  string password{};
+  string current_user{}; 
 public:
-  user(); // Constructor for user registration
-
+  // Functions
+  bool userLogin(string name,string pass);
+  bool userSignup(string name, string pass);
+  void switchUser();
+  void logoutAndQuit();
+  // Data Storage
   void saveUser();
   void deleteUser();
-  
+
+  // Constructor
+  user(std::string name, std::string pass);
+
+  // Getters and Setters
   inline std::string getName(){return name;}
   inline void setName(std::string s){name = s;}
   inline std::string getPassword(){return password;}
   inline void setPassword(std::string s){password = s;}
+
 };
-  //inline std::string getName(){ return name; }
