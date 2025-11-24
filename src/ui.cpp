@@ -1,13 +1,13 @@
 #include "../include/ui.h"
 
 // Dummy functions to simulate user login and signup
-bool LoginUser(string username) { // Function to login user, bool can be true or false
+bool LoginUser(string username) { 
   cout << " Function LoginUser called.\n"
-       << endl; // Shows that the function is being called
+       << endl; 
   return true;
 }
 
-bool signupUser(string username) { // Function to signup user, bool can be true or false
+bool signupUser(string username) { 
   cout << " Function signupUser called.\n" << endl;
   return true;
 }
@@ -17,23 +17,22 @@ void edittasks() { cout << " Function editTasks is formed" << endl; }
 void deletetasks() { cout << " Function deleteTasks is formed" << endl; }
 void switchuser() { cout << " Function switchuser is formed" << endl; }
 void logoutandquit() { cout << " Function logoutandquit is formed" << endl; }
-string currentUser = ""; // Variable to store current user
+string currentUser = ""; 
 
-void showloginMenu() {                    // Function to show login menu
-  while (true) {                          // Infinite loop
-    int choice;                           // Declare an integer variable choice
-    cout << "=== Login Menu ===" << endl; // Prints login menu header
+void showloginMenu() {
+  while (true) {
+    int choice;
+    cout << "=== Login Menu ===" << endl;
     cout << "1. Login" << endl;
     cout << "2. Signup" << endl;
     cout << "3. Exit" << endl;
-    cout << "Select an option: "; // Prompt user to select an option
-    cin >> choice;                // Sets choice variable to user input
+    cout << "Select an option: ";
+    cin >> choice;
 
     if (choice == 1) {              // Login option
-      cout << "Enter username: ";   // Prompt user to enter username
+      cout << "Enter username: ";
       cin >> currentUser;           // Sets currentUser variable to user input
-      if (LoginUser(currentUser)) { // Calls LoginUser function with currentUser
-                                    // as argument
+      if (LoginUser(currentUser)) {
         cout << "Login successful. Welcome, " << currentUser << "!" << endl;
         break; // Exit loop on successful login
       } else {
@@ -54,18 +53,18 @@ void showloginMenu() {                    // Function to show login menu
   }
 }
 
-void showMainMenu() {                    // Function to show main menu
-  while (true) {                         // Infinite loop
-    int choice;                          // Declare an integer variable choice
-    cout << "=== Main Menu ===" << endl; // Prints main menu header
+void showMainMenu() {
+  while (true) {
+    int choice;
+    cout << "=== Main Menu ===" << endl;
     cout << "1. View Tasks" << endl;
     cout << "2. Add Task" << endl;
     cout << "3. Edit Task" << endl;
     cout << "4. Delete task" << endl;
     cout << "5. Switch User " << endl;
     cout << "6. Logout and quit" << endl;
-    cout << "Select an option: "; // Prompt user to select an option
-    cin >> choice;                // Sets choice variable to user input
+    cout << "Select an option: ";
+    cin >> choice; // Sets choice variable to user input
 
     if (choice == 1) {
       viewtasks();
