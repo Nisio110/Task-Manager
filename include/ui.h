@@ -2,10 +2,12 @@
 #include <iostream>
 #include <string>
 using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
 
 void showMainMenu();
 void showloginMenu();
-string currentUser = ""; // Variable to store current user
 void logoutandquit();
 void switchuser();
 void deletetasks();
