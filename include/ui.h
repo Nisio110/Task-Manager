@@ -14,5 +14,3 @@ void deletetasks();
 void edittasks();
 void addtasks();
 void viewtasks();
-bool signupUser(string username); // Function to signup user, bool can be true or false
-bool LoginUser(string username); // Function to login user, bool can be true or false

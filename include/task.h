@@ -17,6 +17,8 @@
 */
 #pragma once
 #include <string>
+#include <iostream>
+using std::string;
 
 class task {
 private:
@@ -42,7 +44,16 @@ public:
   inline std::string getDeadline(){return deadline;}
   inline void setDeadline(std::string s){deadline = s;}
   
-  bool signupUser(string username);
-  bool LoginUser(string username);
+  // Task Functions
+  void viewTasks();
+  void addTasks();
+  void editTasks();
+  void deleteTasks();
+
+  // User Functions
+  void logoutAndQuit();
+  bool signupUser(string username, string password);
+  bool loginUser(string username,string password);
+  void switchUser();
 
 };
