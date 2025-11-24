@@ -7,10 +7,4 @@ using std::cin;
 using std::endl;
 
 void showMainMenu();
-void showloginMenu();
-void logoutandquit();
-void switchuser();
-void deletetasks();
-void edittasks();
-void addtasks();
-void viewtasks();
+void showLoginMenu();

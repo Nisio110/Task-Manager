@@ -20,19 +20,30 @@
 #include <iostream>
 using std::string;
 
-class task {
+class Task {
 private:
   std::string name{};
   std::string status{};
   std::string description{};
   std::string deadline{};
 public:
+  // Functions
+  void viewTasks();
+  void addTasks();
+  void editTasks();
+  void deleteTasks();
+
+  // Data Storage
+  void initaliseTasks();
+  void saveTask();
+  void deleteTask();
+  void printTaskDetails();
+
+  // Debug Functions
+  
+
+  // Constructors
   task(std::string name);
-
-  void saveTask(); // placeholder
-  void deleteTask(){} // placeholder
-
-  void printTaskDetails(); // placeholder
 
   // Getters and setters
   inline std::string getName(){return name;}
@@ -43,17 +54,4 @@ public:
   inline void setDescription(std::string s){description = s;}
   inline std::string getDeadline(){return deadline;}
   inline void setDeadline(std::string s){deadline = s;}
-  
-  // Task Functions
-  void viewTasks();
-  void addTasks();
-  void editTasks();
-  void deleteTasks();
-
-  // User Functions
-  void logoutAndQuit();
-  bool signupUser(string username, string password);
-  bool loginUser(string username,string password);
-  void switchUser();
-
 };

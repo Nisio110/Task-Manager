@@ -1,9 +1,9 @@
 #include "../include/ui.h"
 #include "../include/task.h"
+#include "../include/user.h"
 
-string currentUser = ""; 
 
-void showloginMenu() {
+void showLoginMenu() {
   while (true) {
     int choice;
     cout << "=== Login Menu ===" << endl;
@@ -13,27 +13,32 @@ void showloginMenu() {
     cout << "Select an option: ";
     cin >> choice;
 
-    if (choice == 1) {              // Login option
+    if (choice == 1) { // Login option
       cout << "Enter username: ";
-      cin >> currentUser;           // Sets currentUser variable to user input
-      if (LoginUser(currentUser)) {
-        cout << "Login successful. Welcome, " << currentUser << "!" << endl;
-        break; // Exit loop on successful login
-      } else {
+      cin >> current_user ;
+      
+      if (userLogin(current_user)) {
+        cout << "Login successful. Welcome, " << current_user << "!" << endl;
+        break; 
+      } 
+      else {
         cout << "Login failed. Please try again." << endl;
       }
-    } else if (choice == 2) { // Signup option
+    } 
+    else if (choice == 2) { // Signup option
       cout << "Enter Username: ";
-      cin >> currentUser;
-      if (signupUser(currentUser)) {
-        cout << "Signup successful. Welcome, " << currentUser << "!" << endl;
+      cin >> current_user ;
+      if (userSignup(current_user)){
+        cout << "Signup successful. Welcome, " << current_user << "!" << endl;
         break; // Exit loop on successful signup
       } else cout << "Signup failed. Please try again." << endl;
       
-    } else if (choice == 3) {
+    }
+    else if (choice == 3) { // Exit option
       cout << "Exiting the program. Goodbye!" << endl;
-      exit(0); // Exit the program
-    } else cout << "Invalid option. Please try again." << endl; 
+      exit(0);
+    }
+    else cout << "Invalid option. Please try again." << endl; 
   }
 }
 
