@@ -27,23 +27,17 @@ private:
   std::string description{};
   std::string deadline{};
 public:
-  // Functions
-  void viewTasks();
-  void addTasks();
-  void editTasks();
-  void deleteTasks();
-
   // Data Storage
   void initaliseTasks();
   void saveTask();
   void deleteTask();
   void printTaskDetails();
 
-  // Debug Functions
-  
-
   // Constructors
-  task(std::string name);
+  Task(string _name);
+  Task(string _name, string _description);
+  Task(string _name, string _description,string _deadline);
+  Task(string _name, string _description,string _deadline, string _status);
 
   // Getters and setters
   inline std::string getName(){return name;}

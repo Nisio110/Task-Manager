@@ -8,3 +8,4 @@ using std::endl;
 
 void showMainMenu();
 void showLoginMenu();
+void printTaskDetails();

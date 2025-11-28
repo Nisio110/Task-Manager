@@ -2,7 +2,7 @@
 #include "../include/task.h"
 #include "../include/ui.h"
 
-bool LoginUser(string username){ 
+bool loginUser(string username){ 
   std::cout << "Function loginUser called.\n";
   return true;
 }
