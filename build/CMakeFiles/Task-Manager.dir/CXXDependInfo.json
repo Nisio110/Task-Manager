@@ -1,0 +1,42 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/dante/Documents/uni/programming/c++/Task-git/build",
+	"dir-cur-src" : "/home/dante/Documents/uni/programming/c++/Task-git",
+	"dir-top-bld" : "/home/dante/Documents/uni/programming/c++/Task-git/build",
+	"dir-top-src" : "/home/dante/Documents/uni/programming/c++/Task-git",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/Task-Manager.dir",
+	"sources" : 
+	{
+		"CMakeFiles/Task-Manager.dir/src/main.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/dante/Documents/uni/programming/c++/Task-git/src/main.cpp"
+		},
+		"CMakeFiles/Task-Manager.dir/src/task.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/dante/Documents/uni/programming/c++/Task-git/src/task.cpp"
+		},
+		"CMakeFiles/Task-Manager.dir/src/ui.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/dante/Documents/uni/programming/c++/Task-git/src/ui.cpp"
+		},
+		"CMakeFiles/Task-Manager.dir/src/user.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/dante/Documents/uni/programming/c++/Task-git/src/user.cpp"
+		}
+	}
+}

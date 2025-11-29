@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/dante/Documents/uni/programming/c++/Task-git/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++26 @CMakeFiles/Task-Manager.dir/src/main.cpp.o.modmap -o CMakeFiles/Task-Manager.dir/src/main.cpp.o -c /home/dante/Documents/uni/programming/c++/Task-git/src/main.cpp",
+  "file": "/home/dante/Documents/uni/programming/c++/Task-git/src/main.cpp",
+  "output": "/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/Task-Manager.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/dante/Documents/uni/programming/c++/Task-git/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++26 @CMakeFiles/Task-Manager.dir/src/task.cpp.o.modmap -o CMakeFiles/Task-Manager.dir/src/task.cpp.o -c /home/dante/Documents/uni/programming/c++/Task-git/src/task.cpp",
+  "file": "/home/dante/Documents/uni/programming/c++/Task-git/src/task.cpp",
+  "output": "/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/Task-Manager.dir/src/task.cpp.o"
+},
+{
+  "directory": "/home/dante/Documents/uni/programming/c++/Task-git/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++26 @CMakeFiles/Task-Manager.dir/src/user.cpp.o.modmap -o CMakeFiles/Task-Manager.dir/src/user.cpp.o -c /home/dante/Documents/uni/programming/c++/Task-git/src/user.cpp",
+  "file": "/home/dante/Documents/uni/programming/c++/Task-git/src/user.cpp",
+  "output": "/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/Task-Manager.dir/src/user.cpp.o"
+},
+{
+  "directory": "/home/dante/Documents/uni/programming/c++/Task-git/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++26 @CMakeFiles/Task-Manager.dir/src/ui.cpp.o.modmap -o CMakeFiles/Task-Manager.dir/src/ui.cpp.o -c /home/dante/Documents/uni/programming/c++/Task-git/src/ui.cpp",
+  "file": "/home/dante/Documents/uni/programming/c++/Task-git/src/ui.cpp",
+  "output": "/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/Task-Manager.dir/src/ui.cpp.o"
+}
+]

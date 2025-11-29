@@ -1,0 +1,3 @@
+/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/Task-Manager.dir
+/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/edit_cache.dir
+/home/dante/Documents/uni/programming/c++/Task-git/build/CMakeFiles/rebuild_cache.dir
