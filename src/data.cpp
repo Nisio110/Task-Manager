@@ -20,7 +20,7 @@ void Data::saveTask(User &user, Task &task){
     ss >> task_filename;
 
     // create file using that filename
-    cout << dbg_prefix << "Opening/Creating the file";
+    cout << dbg_prefix << "Opening/Creating the file\n";
     fstream f;
     f.open("../test.txt");
     cout << dbg_prefix << "Filepath: " << task_filename << '\n';
