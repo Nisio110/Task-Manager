@@ -6,5 +6,13 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void showMainMenu();
-void showLoginMenu();
+
+void    showMainMenu();
+void    showLoginMenu();
+void    viewtasks();
+void    addtasks();   
+void    edittasks();
+void    deletetasks();
+void    switchuser();
+void    logoutandquit();
+
