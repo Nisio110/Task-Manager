@@ -3,6 +3,9 @@
 /.vscode/
 /Task-Manager
 /.git/
+<<<<<<< HEAD
 .idea/c_cpp_properties.json
 .idea/vcs.xml
 .idea/workspace.xml
+=======
+>>>>>>> 717ddc3 (rebasing to merge oscars ui changes)

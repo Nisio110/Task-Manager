@@ -15,6 +15,7 @@ using std::fstream;
 using std::stringstream;
 using std::cout;
 
+<<<<<<< HEAD
 void Data::saveTask(User &user, Task &task){
     cout << dbg_prefix << "Saving task...\n";
 >>>>>>> f76798f (adjusted the debugging statements in data.cpp)
@@ -64,9 +65,30 @@ void Data::saveTask(User &user, Task &task){
     f.open("../test.txt");
     cout << dbg_prefix << "Filepath: " << task_filename << '\n';
     if (f.fail()) {
+=======
+
+void TaskFile::saveTask(User &user, Task &task){
+    stringstream ss;
+    int user_id;
+    string task_fn;
+    user_id = user.getID();
+
+    // Create filename
+    ss << "../data/" << "User" << user_id << "Tasks.csv";
+    ss >> task_fn;
+    
+    // create file using that filename
+    cout << dbg_prefix << "Opening file located at: " << task_fn << '\n';
+    f.open(task_fn);
+    if (f.fail()){
+>>>>>>> 717ddc3 (rebasing to merge oscars ui changes)
         f.clear();
         cout << dbg_prefix << "File failed to open :(" << '\n';
     }else cout << dbg_prefix << "File opened successfully!" << '\n';
+ 
+    // Add data to the file
+    /*
+    cout << dbg_prefix << "Saving task...\n";
     task_file[task.getID()] = &f;
     string commas = ",,,";
     *task_file[task.getID()] << "\"" << task.getID() << "\"" << commas
@@ -76,7 +98,13 @@ void Data::saveTask(User &user, Task &task){
                              << "\"" << task.getDeadline() << "\"" << commas
                              << "\n";
     
+<<<<<<< HEAD
     task_file[task.getID()]->close();
     cout << dbg_prefix << "File closed\n";
 >>>>>>> f76798f (adjusted the debugging statements in data.cpp)
+=======
+    */
+    f.close();
+    cout << dbg_prefix << "Closing file.\n";
+>>>>>>> 717ddc3 (rebasing to merge oscars ui changes)
 }
