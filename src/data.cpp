@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "../include/include.h"
 
 void TasksFile::saveTask(User &user, Task &task){
@@ -68,27 +69,32 @@ void Data::saveTask(User &user, Task &task){
 =======
 
 void TaskFile::saveTask(User &user, Task &task){
+=======
+#include "../include/include.h"
+
+void TasksFile::saveTask(User &user, Task &task){
+>>>>>>> 8e6b010 (rebasing)
     stringstream ss;
-    int user_id;
     string task_fn;
-    user_id = user.getID();
 
     // Create filename
-    ss << "../data/" << "User" << user_id << "Tasks.csv";
+    ss << "data/User" << user.getID() << "Tasks.csv";
     ss >> task_fn;
-    
-    // create file using that filename
-    cout << dbg_prefix << "Opening file located at: " << task_fn << '\n';
-    f.open(task_fn);
+
+    // Create file using that filename
+    cout << dbg_prefix << "Creating file..." << '\n';
+    f.open(task_fn, ios::app);
     if (f.fail()){
 >>>>>>> 717ddc3 (rebasing to merge oscars ui changes)
         f.clear();
-        cout << dbg_prefix << "File failed to open :(" << '\n';
-    }else cout << dbg_prefix << "File opened successfully!" << '\n';
- 
+        cout << dbg_prefix << "File creation failed :(" << '\n';
+    }else 
+      cout << dbg_prefix << "File created successfully!" << '\n'
+           << dbg_prefix << "Path: <CWD>/" << task_fn << '\n';
+
     // Add data to the file
-    /*
     cout << dbg_prefix << "Saving task...\n";
+<<<<<<< HEAD
     task_file[task.getID()] = &f;
     string commas = ",,,";
     *task_file[task.getID()] << "\"" << task.getID() << "\"" << commas
@@ -104,6 +110,23 @@ void TaskFile::saveTask(User &user, Task &task){
 >>>>>>> f76798f (adjusted the debugging statements in data.cpp)
 =======
     */
+=======
+    string data_div = ",";
+    string task_div = "\n";
+    string q = "\"";
+    f << q << task.getID() << q << data_div
+      << q << task.getName() << q << data_div
+      << q << task.getDescription() << q << data_div
+      << q << task.getStatus() << q << data_div
+      << q << task.getDeadline() << q << data_div
+      << task_div;
+
+    if (f.fail())
+      cout << dbg_prefix << "File saving failed :(" << '\n';
+    else cout << dbg_prefix << "File saved successfully!" << '\n';
+
+    // Close file
+>>>>>>> 8e6b010 (rebasing)
     f.close();
     cout << dbg_prefix << "Closing file.\n";
 >>>>>>> 717ddc3 (rebasing to merge oscars ui changes)
