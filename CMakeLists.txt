@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 3.31)
-project(Task-Manager)
+cmake_minimum_required(VERSION 3.10)
+project(task-git CXX)
 
-set(CMAKE_CXX_STANDARD 26)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ..)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(${PROJECT_NAME}  src/main.cpp 
-                                src/task.cpp 
-                                src/user.cpp 
-                                src/data.cpp)
+include_directories(include)
+
+file(GLOB SOURCES "src/*.cpp")
+
+add_executable(task-git ${SOURCES})
