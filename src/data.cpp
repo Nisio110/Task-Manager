@@ -1,13 +1,15 @@
 #include "../include/data.h"
 #include "../include/task.h"
 #include "../include/user.h"
+#include "../include/ui.h"
 #include <fstream>
 #include <sstream>
 using std::fstream;
 using std::stringstream;
+using std::cout;
 
 void Data::saveTask(User &user, Task &task){
-    std::cout << "Saving task...\n";
+    cout << dbg_prefix << "Saving task...\n";
 
     // Create filename
     string task_filename;
@@ -18,13 +20,14 @@ void Data::saveTask(User &user, Task &task){
     ss >> task_filename;
 
     // create file using that filename
+    cout << dbg_prefix << "Opening/Creating the file";
     fstream f;
     f.open("../test.txt");
-    std::cout << "Filename: " << task_filename << '\n';
+    cout << dbg_prefix << "Filepath: " << task_filename << '\n';
     if (f.fail()) {
         f.clear();
-        std::cout << "File failed to open" << '\n';
-    }else std::cout << "Task saved!" << '\n';
+        cout << dbg_prefix << "File failed to open :(" << '\n';
+    }else cout << dbg_prefix << "File opened successfully!" << '\n';
     task_file[task.getID()] = &f;
     string commas = ",,,";
     *task_file[task.getID()] << "\"" << task.getID() << "\"" << commas
@@ -35,5 +38,5 @@ void Data::saveTask(User &user, Task &task){
                              << "\n";
     
     task_file[task.getID()]->close();
-    std::cout << "[DEBUG] " << "File closed\n";
+    cout << dbg_prefix << "File closed\n";
 }
