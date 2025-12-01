@@ -15,7 +15,3 @@ void    edittasks();
 void    deletetasks();
 void    switchuser();
 void    logoutandquit();
-<<<<<<< HEAD
-
-=======
->>>>>>> e5ed04f (Replaced if for switch and added fuctions to .h file)
