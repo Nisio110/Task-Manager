@@ -5,7 +5,7 @@
 int main(){
     Task t("SampleTask");
     User u("Oisin", "123");
-    Data d;
-    d.saveTask(u,t);
+    TaskFile tf;
+    tf.saveTask(u,t);
     return 0;
 }

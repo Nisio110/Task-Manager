@@ -8,15 +8,14 @@ using std::string;
 
 const static int MAX_TASKS = 3;
 
-class Data{
+class TaskFile{
 private:
-  int num_users{};
-  int num_tasks{};
-  fstream *user_file;
-  fstream *task_file[MAX_TASKS];
+  int file_id{};
+  int task_id{};
+  fstream f;
+  Task *t[MAX_TASKS];
 public:
   void loadTasks();
-  void loadUsers();
   void saveTask();
 
   // Task Saving

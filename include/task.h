@@ -13,7 +13,7 @@ private:
 public:
   // Data Storage
   void initaliseTasks();
-  void saveTask();
+  void saveTask(Task &t);
   void deleteTask();
   void printTaskDetails();
 

@@ -12,3 +12,10 @@ const static string prefix = "~ ";
 void showMainMenu();
 void showLoginMenu();
 void printTaskDetails();
+
+void viewtasks();
+void addtasks();
+void edittasks();
+void deletetasks();
+void switchuser();
+void logoutandquit();

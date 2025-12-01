@@ -4,7 +4,7 @@
 using std::cout;
 
 User::User(std::string n, std::string p){
-  cout << "User " << n << " Created\n";
+  cout << dbg_prefix << "User \"" << n << "\" Created\n";
   num_users += 1;
   id = num_users;
   password = p;
