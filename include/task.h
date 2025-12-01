@@ -1,20 +1,3 @@
-/*
-# Tasks class
-##Private 
-### Data
-  + Status - completed, pending, cancelled + Description + Deadline
-  + Description
-  + Deadline
-### Functions
-  + Save task to file
-## Public
-### Functions
-  + Create task + Delete task
-  + Edit task name
-  + View tasks
-  + Edit/remove description
-  + Edit/remove deadline
-*/
 #pragma once
 #include <string>
 #include <iostream>
@@ -26,6 +9,7 @@ private:
   std::string status{};
   std::string description{};
   std::string deadline{};
+  int id{};
 public:
   // Data Storage
   void initaliseTasks();
@@ -48,4 +32,6 @@ public:
   inline void setDescription(std::string s){description = s;}
   inline std::string getDeadline(){return deadline;}
   inline void setDeadline(std::string s){deadline = s;}
+  inline int getID(){return id;}
+  inline void setID(int i){id = i;}
 };

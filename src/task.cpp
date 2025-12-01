@@ -4,6 +4,6 @@
 #include "../include/data.h"
 
 Task::Task(std::string name){
-  Data::saveTask(name);
+  //Data::saveTask(name);
 
 }
