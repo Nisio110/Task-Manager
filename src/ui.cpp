@@ -13,7 +13,7 @@ void showLoginMenu() {
     cout << "Select an option: ";
     cin >> choice;
 
-    if (choice == 1) { // Login option
+    if (choice == 1) {                                                                     // Login option
       cout << "Enter username: ";
       cin >> current_user ;
       
@@ -25,12 +25,12 @@ void showLoginMenu() {
         cout << "Login failed. Please try again." << endl;
       }
     } 
-    else if (choice == 2) { // Signup option
+    else if (choice == 2) {                                                                 // Signup option
       cout << "Enter Username: ";
       cin >> current_user ;
       if (userSignup(current_user)){
         cout << "Signup successful. Welcome, " << current_user << "!" << endl;
-        break; // Exit loop on successful signup
+        break;                                                                             // Exit loop on successful signup
       } else cout << "Signup failed. Please try again." << endl;
       
     }
@@ -53,20 +53,30 @@ void showMainMenu() {
     cout << "5. Switch User " << endl;
     cout << "6. Logout and quit" << endl;
     cout << "Select an option: ";
-    cin >> choice; // Sets choice variable to user input
+    cin >> choice;                                                                         // Sets choice variable to user input
 
-    if (choice == 1) {
+  switch (choice) {
+    case 1:
       viewtasks();
-    } else if (choice == 2) {
+      break;
+    case 2:
       addtasks();
-    } else if (choice == 3) {
+      break;
+    case 3:
       edittasks();
-    } else if (choice == 4) {
+      break;
+    case 4:
       deletetasks();
-    } else if (choice == 5) {
+      break;
+    case 5:
       switchuser();
-    } else if (choice == 6) {
+      break;
+    case 6:
       logoutandquit();
-    }
+      break;
+    default:
+      cout << "Inavlid choice" << endl;
+      break;
   }
 }
+
