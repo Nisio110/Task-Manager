@@ -1,7 +1,4 @@
-#include "../include/user.h"
-#include "../include/task.h"
-#include "../include/ui.h"
-using std::cout;
+#include "../include/include.h"
 
 User::User(std::string n, std::string p){
   cout << dbg_prefix << "User \"" << n << "\" Created\n";

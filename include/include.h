@@ -1,0 +1,11 @@
+#pragma once
+#include "../include/task.h"
+#include "../include/tasks_file.h"
+#include "../include/ui.h"
+#include "../include/user.h"
+#include <fstream>
+#include <sstream>
+using std::fstream;
+using std::stringstream;
+using std::cout;
+using std::ios;

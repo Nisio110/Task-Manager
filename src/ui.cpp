@@ -1,7 +1,4 @@
-#include "../include/ui.h"
-#include "../include/task.h"
-#include "../include/user.h"
-
+#include "../include/include.h"
 
 void showLoginMenu() {
   while (true) {

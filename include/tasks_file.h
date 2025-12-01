@@ -8,7 +8,7 @@ using std::string;
 
 const static int MAX_TASKS = 3;
 
-class TaskFile{
+class TasksFile{
 private:
   int file_id{};
   int task_id{};
