@@ -1,4 +1,11 @@
 #include "../include/include.h"
+#include "../include/task.h"
+#include "../include/taskData.h"
+#include "../include/ui.h"
+#include "../include/user.h"
+// Static member variable definition
+int Task::num_tasks = 0;
+
 Task::Task(){
   setID(createID());
 }
@@ -30,8 +37,7 @@ Task::Task(string _name, string _description,string _deadline, string _status){
 }
 
 int Task::createID(){
-  int id;
-  id = num_tasks + 1;
-  num_tasks += 1;
+  incNumTasks();
+  int id{getNumTasks()};
   return id;
 }

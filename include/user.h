@@ -26,15 +26,15 @@ public:
   inline string getName(){return name;}
   inline string getPassword(){return password;}
   inline int getID(){return id;}
-  inline static string getCurrentUser(){return current_user;}
+  static inline string getCurrentUser(){return current_user;}
 
   // Setters
   inline void setName(string s){name = s;}
   inline void setPassword(string s){password = s;}
   inline void setID(int i){id = i;}
-  inline static void setCurrentUser(string _user){current_user = _user;}
+  static inline void setCurrentUser(string _username){current_user = _username;}
 
   
-  static bool userLoginUI(string current_user);
-  static bool userSignupUI(string current_user);
+  static bool userLoginUI(string current_user){return false;}
+  static bool userSignupUI(string current_user){return false;}
 };

@@ -1,4 +1,8 @@
 #include "../include/include.h"
+#include "../include/task.h"
+#include "../include/taskData.h"
+#include "../include/ui.h"
+#include "../include/user.h"
 
 void showLoginMenu(){
   int choice;

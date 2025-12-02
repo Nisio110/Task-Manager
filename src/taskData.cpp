@@ -1,4 +1,8 @@
 #include "../include/include.h"
+#include "../include/task.h"
+#include "../include/taskData.h"
+#include "../include/ui.h"
+#include "../include/user.h"
 
 void TaskData::saveTask(User &user, Task &task){
     stringstream ss;
@@ -9,17 +13,17 @@ void TaskData::saveTask(User &user, Task &task){
     ss >> task_fn;
 
     // Create file using that filename
-    cout << dbg_prefix << "Creating file..." << '\n';
+    cout << dbg() << "Creating file..." << '\n';
     f.open(task_fn, ios::app);
     if (f.fail()){
-        f.clear();
-        cout << dbg_prefix << "File creation failed :(" << '\n';
+      f.clear();
+      cout << dbg() << "File creation failed :(" << '\n';
     }else 
-      cout << dbg_prefix << "File created successfully!" << '\n'
-           << dbg_prefix << "Path: <CWD>/" << task_fn << '\n';
+      cout << dbg() << "File created successfully!" << '\n'
+           << dbg() << "Path: <CWD>/" << task_fn << '\n';
 
     // Add data to the file
-    cout << dbg_prefix << "Saving task...\n";
+    cout << dbg() << "Saving task...\n";
     string data_div = ",";
     string task_div = "\n";
     string q = "\"";
@@ -31,10 +35,10 @@ void TaskData::saveTask(User &user, Task &task){
       << task_div;
 
     if (f.fail())
-      cout << dbg_prefix << "File saving failed :(" << '\n';
-    else cout << dbg_prefix << "File saved successfully!" << '\n';
+      cout << dbg() << "File saving failed :(" << '\n';
+    else cout << dbg() << "File saved successfully!" << '\n';
 
     // Close file
     f.close();
-    cout << dbg_prefix << "Closing file.\n";
+    cout << dbg() << "Closing file.\n";
 }
