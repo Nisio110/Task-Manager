@@ -1,13 +1,16 @@
-#include "../include/user.h"
+#include "../include/include.h"
 #include "../include/task.h"
+#include "../include/taskData.h"
 #include "../include/ui.h"
+#include "../include/user.h"
+// Static member variable definitions
+int User::num_users = 0;
+string User::current_user = "";
 
-bool LoginUser(string username){ 
-  std::cout << "Function loginUser called.\n";
-  return true;
-}
-
-bool signupUser(string username){ 
-  std::cout << "Function signupUser called.\n";
-  return true;
+User::User(std::string n, std::string p){
+  cout << dbg() << "User \"" << n << "\" Created\n";
+  num_users += 1;
+  id = num_users;
+  password = p;
+  name = n;
 }

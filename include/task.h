@@ -1,57 +1,48 @@
-/*
-# Tasks class
-##Private 
-### Data
-  + Status - completed, pending, cancelled + Description + Deadline
-  + Description
-  + Deadline
-### Functions
-  + Save task to file
-## Public
-### Functions
-  + Create task + Delete task
-  + Edit task name
-  + View tasks
-  + Edit/remove description
-  + Edit/remove deadline
-*/
 #pragma once
-#include <string>
-#include <iostream>
-using std::string;
+#include "../include/include.h"
 
 class Task {
 private:
-  std::string name{};
-  std::string status{};
-  std::string description{};
-  std::string deadline{};
+  std::string name{"N/a"};
+  std::string status{"N/a"};
+  std::string description{"N/a"};
+  std::string deadline{"N/a"};
+  int id;
+  static int num_tasks;
 public:
-  // Functions
-  void viewTasks();
-  void addTasks();
-  void editTasks();
-  void deleteTasks();
-
   // Data Storage
   void initaliseTasks();
-  void saveTask();
+  void saveTask(Task &t);
   void deleteTask();
   void printTaskDetails();
 
-  // Debug Functions
-  
-
   // Constructors
-  task(std::string name);
+  Task();
+  Task(string _name);
+  Task(string _name, string _description);
+  Task(string _name, string _description,string _deadline);
+  Task(string _name, string _description,string _deadline, string _status);
 
-  // Getters and setters
+  // Getters
+  static inline int getNumTasks(){return num_tasks;}
+  inline int getID(){return id;}
   inline std::string getName(){return name;}
-  inline void setName(std::string s){name = s;}
   inline std::string getStatus(){return status;}
-  inline void setStatus(std::string s){status = s;}
   inline std::string getDescription(){return description;}
-  inline void setDescription(std::string s){description = s;}
   inline std::string getDeadline(){return deadline;}
+  // Setters
+  inline void incNumTasks(){num_tasks += 1;} //increment number of tasks
+  inline void setID(int i){id = i;}
+  inline void setName(std::string s){name = s;}
+  inline void setStatus(std::string s){status = s;}
+  inline void setDescription(std::string s){description = s;}
   inline void setDeadline(std::string s){deadline = s;}
+
+  int createID();
+  static void deleteTask(int id){}
+  static void createTask(string current_user, string name, string desc, string deadline, string status){}
+  static void updateTaskName(int id, string new_name){}
+  static void updateTaskDescription(int id, string new_desc){}
+  static void updateTaskDeadline(int id, string new_deadline){}
+  static void updateTaskStatus(int id, string new_status){}
 };
