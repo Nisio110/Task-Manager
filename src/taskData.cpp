@@ -11,6 +11,7 @@ void TaskData::saveTask(User &user, Task &task){
     // Create filename
     ss << "data/User" << user.getID() << "Tasks.csv";
     ss >> task_fn;
+    // ^^ This can be done in the class, not here
 
     // Create file using that filename
     cout << dbg() << "Creating file..." << '\n';
@@ -21,7 +22,9 @@ void TaskData::saveTask(User &user, Task &task){
     }else 
       cout << dbg() << "File created successfully!" << '\n'
            << dbg() << "Path: <CWD>/" << task_fn << '\n';
-
+    // ^^ This should probably be its own function
+          
+          
     // Add data to the file
     cout << dbg() << "Saving task...\n";
     string data_div = ",";

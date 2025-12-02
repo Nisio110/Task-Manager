@@ -17,6 +17,7 @@ void UserData::saveUser(User &user){
         file.clear();
         cout << dbg() << "File failed to open :(\n";
     }
+    // ^^ This should be its own function
 
     // Write data to the file
     string data_div = ",", user_div = "\n", qt = "\"";
