@@ -20,7 +20,7 @@ public:
   void deleteUser();
 
   // Constructor
-  User(string name, string pass);
+  User(string name);
 
   // Getters  
   inline string getName(){return name;}
@@ -34,7 +34,6 @@ public:
   inline void setID(int i){id = i;}
   static inline void setCurrentUser(string _username){current_user = _username;}
 
-  
-  static bool userLoginUI(string current_user){return false;}
-  static bool userSignupUI(string current_user){return false;}
+  static bool userLogin(string current_user);
+  static bool userSignup(string current_user);
 };

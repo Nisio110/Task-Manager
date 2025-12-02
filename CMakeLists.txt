@@ -7,8 +7,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ..)
 add_executable  (
                     ${PROJECT_NAME}  
                     src/main.cpp 
+                    src/ui.cpp
                     src/task.cpp 
                     src/user.cpp 
                     src/taskData.cpp
-                    src/ui.cpp
+                    src/userData.cpp
                 )

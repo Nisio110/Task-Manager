@@ -11,34 +11,37 @@ void TaskData::saveTask(User &user, Task &task){
     // Create filename
     ss << "data/User" << user.getID() << "Tasks.csv";
     ss >> task_fn;
+    // ^^ This can be done in the class, not here
 
     // Create file using that filename
     cout << dbg() << "Creating file..." << '\n';
-    f.open(task_fn, ios::app);
-    if (f.fail()){
-      f.clear();
+    file.open(task_fn, ios::app);
+    if (file.fail()){
+      file.clear();
       cout << dbg() << "File creation failed :(" << '\n';
     }else 
       cout << dbg() << "File created successfully!" << '\n'
            << dbg() << "Path: <CWD>/" << task_fn << '\n';
-
+    // ^^ This should probably be its own function
+          
+          
     // Add data to the file
     cout << dbg() << "Saving task...\n";
     string data_div = ",";
     string task_div = "\n";
-    string q = "\"";
-    f << q << task.getID() << q << data_div
-      << q << task.getName() << q << data_div
-      << q << task.getDescription() << q << data_div
-      << q << task.getStatus() << q << data_div
-      << q << task.getDeadline() << q << data_div
-      << task_div;
+    string qt = "\"";
+    file << qt << task.getID() << qt << data_div
+         << qt << task.getName() << qt << data_div
+         << qt << task.getDescription() << qt << data_div
+         << qt << task.getStatus() << qt << data_div
+         << qt << task.getDeadline() << qt << data_div
+         << task_div;
 
-    if (f.fail())
+    if (file.fail())
       cout << dbg() << "File saving failed :(" << '\n';
     else cout << dbg() << "File saved successfully!" << '\n';
 
     // Close file
-    f.close();
+    file.close();
     cout << dbg() << "Closing file.\n";
 }

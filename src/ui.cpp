@@ -21,7 +21,7 @@ void showLoginMenu(){
         cin >> s;
         User::setCurrentUser(s);
         
-        if (User::userLoginUI(User::getCurrentUser())) {
+        if (User::userLogin(User::getCurrentUser())) {
           cout << "Login successful. Welcome, " << User::getCurrentUser() << "!" << endl;
           break; 
         } 
@@ -34,7 +34,7 @@ void showLoginMenu(){
         string s2;
         cin >> s2;
         User::setCurrentUser(s2) ;
-        if (User::userSignupUI(User::getCurrentUser())){
+        if (User::userSignup(User::getCurrentUser())){
           cout << "Signup successful. Welcome, " << User::getCurrentUser()<< "!" << endl;
             break;   
         }
