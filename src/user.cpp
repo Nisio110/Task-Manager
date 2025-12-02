@@ -7,10 +7,20 @@
 int User::num_users = 0;
 string User::current_user = "";
 
-User::User(std::string n, std::string p){
+User::User(std::string n){
   cout << dbg() << "User \"" << n << "\" Created\n";
   num_users += 1;
   id = num_users;
-  password = p;
-  name = n;
+  setName(n);
+}
+
+bool User::userLogin(string name){
+  for (int i; i < num_users; i++)
+  {
+    //UserData::u[i]->
+  }
+  return false;
+}
+bool User::userSignup(string name){
+  return false;
 }

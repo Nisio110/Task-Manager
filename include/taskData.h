@@ -5,19 +5,16 @@
 class Task;
 class User;
 
-const static int MAX_TASKS = 3;
-
 class TaskData{
 private:
+  const static int MAX_TASKS = 3;
   int file_id{};
   int task_id{};
-  fstream f;
-  Task *t[MAX_TASKS];
+  fstream file;
+  Task *task[MAX_TASKS];
 public:
-  void loadTasks();
-
   // Task Saving
-  //void initaliseTasks(); //read saved tasks
+  void loadTasks(); // load saved tasks from disk
   void saveTask(User &u, Task &t);
   void deleteTask();
 
