@@ -1,14 +1,10 @@
 #pragma once
-#include <string>
-#include <fstream>
-#include "../include/user.h"
+#include "../include/include.h"
 #include "../include/task.h"
-using std::fstream;
-using std::string;
 
 const static int MAX_TASKS = 3;
 
-class TasksFile{
+class TaskData{
 private:
   int file_id{};
   int task_id{};
@@ -16,7 +12,7 @@ private:
   Task *t[MAX_TASKS];
 public:
   void loadTasks();
-  void saveTask();
+  //void saveTask();
 
   // Task Saving
   //void initaliseTasks();
@@ -25,5 +21,5 @@ public:
 
   // Getters and setters
   //void setFileName(string n){file_name = n;}
-
+  static void displayUserTasks(string current_user);
 };

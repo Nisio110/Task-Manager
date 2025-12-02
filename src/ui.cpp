@@ -1,17 +1,6 @@
 #include "../include/include.h"
-string current_user;
-void displayUserTasks(string);
-bool userLogin(string);
-bool userSignup(string);
-void deleteTask(int);
-void createTask(string, string,string,string,string);
-void updateTaskName(int, string);
-void updateTaskDescription(int, string);             //dummy fucntion
-void updateTaskDeadline(int, string);                   //dummy fucntion
-void updateTaskStatus(int, string);         //dummy fucntion
 
-
-void showLoginMenu(string){
+void showLoginMenu(){
   int choice;
   while (true) {
     cout << "=== Login Menu ===" << endl;
@@ -21,38 +10,44 @@ void showLoginMenu(string){
     cout << "Select an option: ";
     cin >> choice;
 
-    if (choice == 1) {                                                                     // Login option
-      cout << "Enter username: ";
-      cin >> current_user ;
-      
-      if (userLogin(current_user)) {
-        cout << "Login successful. Welcome, " << current_user << "!" << endl;
-        break; 
-      } 
+    switch (choice){
+      case 1: { // Login option
+        cout << "Enter username: ";
+        string s;
+        cin >> s;
+        User::setCurrentUser(s);
+        
+        if (User::userLoginUI(User::getCurrentUser())) {
+          cout << "Login successful. Welcome, " << User::getCurrentUser() << "!" << endl;
+          break; 
+        } 
         else {
           cout << "Login failed. Please try again." << endl;
         }
-    } 
-      else if (choice == 2) {                                                                 // Signup option
+      } 
+      case 2: { // Signup option
         cout << "Enter Username: ";
-        cin >> current_user ;
-        if (userSignup(current_user)){
-          cout << "Signup successful. Welcome, " << current_user << "!" << endl;
+        string s2;
+        cin >> s2;
+        User::setCurrentUser(s2) ;
+        if (User::userSignupUI(User::getCurrentUser())){
+          cout << "Signup successful. Welcome, " << User::getCurrentUser()<< "!" << endl;
             break;   
         }
             else {
               cout << "Signup failed. Please try again." << endl;
             }
       }
-        else if (choice == 3) {                                                                 // Exit option
-          cout << "Exiting the program. Goodbye!" << endl;
-          exit(0);
-        }
-          else {
-            cout << "Invalid option. Please try again." << endl;
-          }
-        }
+      case 3: { // Exit option
+        cout << "Exiting the program. Goodbye!" << endl;
+        exit(0);
       }
+      default: {
+        cout << "Invalid option. Please try again." << endl;
+      }
+    }
+  }
+}
     
 void showMainMenu() {
     int choice;
@@ -70,60 +65,57 @@ void showMainMenu() {
 
       switch (choice) {
         case 1:
-          viewtasks();
+          viewTasks();
           break;
         case 2:
-          addtasks();
+          addTasks();
           break;
         case 3:
-          edittasks();
+          editTasks();
           break;
         case 4:
-          deletetasks();
+          deleteTasks();
           break;
         case 5:
-          switchuser();
+          switchUser();
           break;
         case 6:
-          logoutandquit();
+          logout();
           break;
         default:
           cout << "Inavlid choice" << endl;
           break;
+        break;
       }
     }
 }
       
 
 
-void viewtasks() {
+void viewTasks() {
   cout << "===== View Tasks =====" << endl;                                                        
-  cout << "Tasks for user: " << current_user << endl;   
-  displayUserTasks(current_user);                       //dummy function
+  cout << "Tasks for user: " << User::getCurrentUser()<< endl;   
+  TaskData::displayUserTasks(User::getCurrentUser());                       //dummy function
   cout << "Press Enter to exit" << endl;                // Tasks will contain the name, description, status and deadline
   cin.ignore();
   cin.get();
 }
 
-void addtasks(){  
+void addTasks(){  
   cout << "===== Add Tasks =====" << endl;
   string taskName, description, deadline, status;  
 
   cin.ignore();                                 //Get Name, description, deadline and status
   cout << "Enter task name: " << endl;
   getline(cin, taskName);
-
   cout << "Enter task description: " << endl;
   getline(cin, description);
-
   cout << "Enter task deadline: " << endl;
   getline(cin, deadline);
-
   cout << "Enter task status: " << endl;
   getline(cin, status);
 
-
-  createTask(current_user, taskName, description, deadline, status);                 //dummy fucntion
+  Task::createTask(User::getCurrentUser(), taskName, description, deadline, status);                 //dummy fucntion
 
   cout << "Task added successfully" << endl;
   cout << "Press Enter to exit" << endl;
@@ -131,8 +123,7 @@ void addtasks(){
   cin.get();  
 }
 
-void edittasks() {
-
+void editTasks() {
      int editChoice;
      int task_id;
      string newName;
@@ -152,28 +143,27 @@ void edittasks() {
     cout << "4. Status" << endl;
     cout << "Choice: ";
     cin >> editChoice;
-
     cin.ignore();
 
     switch (editChoice) {
         case 1: {
             cout << "Enter new task name: ";
             getline(cin, newName);
-            updateTaskName(task_id, newName);                           //dummy fucntion
+            Task::updateTaskName(task_id, newName);
             cout << "Task name updated successfully" << endl;
             break;
         }
         case 2: {            
             cout << "Enter new description: ";
             getline(cin, newDescription);
-            updateTaskDescription(task_id, newDescription);             //dummy fucntion
+            Task::updateTaskDescription(task_id, newDescription);             //dummy fucntion
             cout << "Description updated successfully" << endl;
             break;
         }
         case 3: {           
             cout << "Enter new deadline: ";
             getline(cin, newDeadline);
-            updateTaskDeadline(task_id, newDeadline);                   //dummy fucntion
+            Task::updateTaskDeadline(task_id, newDeadline);                   //dummy fucntion
             cout << "Deadline updated successfully" << endl;
             break;
         }
@@ -184,19 +174,23 @@ void edittasks() {
             cin >> statusChoice;
 
 
-            if(statusChoice ==1){
-              newStatus = "Completed";
-            }
-            else if (statusChoice == 2){
-              newStatus = "Pending";
-            }
-            else{
-              cout << "Invalid option" << endl;
-              cin.ignore();
-              break;
+            switch (statusChoice){
+              case 1:{
+                newStatus = "Completed";
+                break;
+              }
+              case 2:{
+                newStatus = "Pending";
+                break;
+              }
+              default: {
+                cout << "Invalid option" << endl;
+                cin.ignore();
+                break;
+              }
             }
 
-            updateTaskStatus(task_id, newStatus);         //dummy fucntion
+            Task::updateTaskStatus(task_id, newStatus);
 
             cout << "Status updated successfully" << endl;
             cin.ignore();
@@ -212,28 +206,27 @@ void edittasks() {
     cin.get();
 }
 
-void deletetasks() {
+void deleteTasks() {
   int task_id;
   
   cout << "===== Delete Tasks =====" << endl;
   cout << "Enter task id to delete" << endl;
   cin >> task_id;
 
-  deleteTask(task_id);                                    //dummy functions
+  Task::deleteTask(task_id);
   cout << "Task deleted successfully" << endl;
-
   cout << "Press Enter to continue";
   cin.ignore();
   cin.get();
 }
 
-void switchuser(){
+void switchUser(){
   cout << "===== Switch User =====" << endl;
-  current_user = "";
+  User::getCurrentUser()= "";
   showLoginMenu();
 }
 
-void logoutandquit(){
+void logout(){
   int choice;
   cout << "===== Log Out And Quit =====" << endl;
   cout << "Are you sure you want to logout and quit?" << endl;
@@ -241,19 +234,24 @@ void logoutandquit(){
   cout << "2.No"  << endl;
   cin >> choice;
 
-  if (choice == 1){
-    exit(0);
-  }
-  else if (choice == 2){
-    cout << "Logout cancelled" << endl;
-    cout << "Press Enter to continue" << endl;
-    cin.ignore();
-    cin.get();
-  }
-  else{
-    cout << "Invalid option" << endl;
-    cout << "Press Enter to continue" << endl;
-    cin.ignore();
-    cin.get();
+  switch (choice){
+    case 1: {
+      exit(0);
+      break;
+    }
+    case 2: {
+      cout << "Logout cancelled" << endl;
+      cout << "Press Enter to continue" << endl;
+      cin.ignore();
+      cin.get();
+      break;
+    }
+    default: {
+      cout << "Invalid option" << endl;
+      cout << "Press Enter to continue" << endl;
+      cin.ignore();
+      cin.get();
+      break;
+    }
   }
 }
