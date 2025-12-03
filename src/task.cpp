@@ -42,6 +42,7 @@ int Task::createID(){
   return id;
 }
 
+// Technically, it is checking how many tasks are in the file
 void Task::setNumTasks(){
   stringstream ss;
   string fn;
@@ -59,6 +60,7 @@ void Task::setNumTasks(){
     char a[x];
     file.get(a,x);
     string id = a;
+    // get rid 
     cout << "id = " << id << '\n'; 
     for (int i = 0; i < x; i++)
         if (id[i] == '"') id[i] = 0;

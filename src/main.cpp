@@ -6,30 +6,15 @@
 
 string dbg() {return "[DEBUG] ";}
 string pfx() {return "~ ";}
+
 void testTaskSaving();
 void testUserSaving();
 void program();
 
 int main(){
-  fstream file("data/User1Tasks.csv");
-  int temp_num_tasks;
-  while(!file.eof()){
-    temp_num_tasks += 1;
-    cout << "fjlaks;dfjas;dlgjl;k";
-    file.ignore(1e5, '\n');
-  }
-  //file.seekg(1,ios::cur);
-  for (int i; i < temp_num_tasks; i++){
-    int x = 4;
-    char a[x];
-    file.get(a,x);
-    string id = a;
-    cout << "id = " << id << '\n'; 
-    for (int i = 0; i < x; i++)
-        if (id[i] == '"') id[i] = 0;
-    string clean_id = id;
-    cout << "clean id = " << clean_id << '\n';
-  }
+  program();
+  testUserSaving();
+  testTaskSaving();
   return 0;
 }
 
