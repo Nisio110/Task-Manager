@@ -20,6 +20,7 @@ int main(){
 
 void program(){
     showLoginMenu();
+    showMainMenu();
 }
 
 void testUserSaving(){
