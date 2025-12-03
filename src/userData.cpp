@@ -23,5 +23,4 @@ void UserData::saveUser(User &user){
     string data_div = ",", user_div = "\n", qt = "\"";
     file << qt << user.getID() << qt << data_div
          << user_div;
-        
 }

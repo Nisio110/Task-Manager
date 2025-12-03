@@ -41,3 +41,15 @@ int Task::createID(){
   int id{getNumTasks()};
   return id;
 }
+
+void Task::setNumTasks(){
+  stringstream ss;
+  string fn;
+  ss << "data/User" << u->getID() << "Tasks.csv";
+  ss >> fn;
+  fstream file(fn);
+  char a[3];
+  file.get(a,3);
+  string id = a;
+  cout << "id = " << id;
+}

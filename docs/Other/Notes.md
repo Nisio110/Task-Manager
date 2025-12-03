@@ -1,6 +1,6 @@
 # Notes - 02/12/2025 10:25pm
 TODO:
-- [ ] Figure out how to read from a file and parse the information found within it.
+- [x] Figure out how to read from a file and parse the information found within it.
 - [ ] Add an if statement that checks if the task/user already exists before saving (could do this by reading the ID).
 - [ ] Implement User/Task initialisation that fills the pointer arrays in the respective classes with actual objects.
 - [ ] Add functionality for displaying tasks, editing tasks, deleting tasks etc.

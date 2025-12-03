@@ -20,6 +20,7 @@ public:
   void deleteUser();
 
   // Constructor
+  User();
   User(string name);
 
   // Getters  

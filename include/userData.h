@@ -16,4 +16,5 @@ public:
     void loadUser(); // load users from disk to program memory
     void deleteUser(); // delete user from disk
     void checkUserExists(); // self explanatory
+    friend void loadFile();
 };

@@ -12,13 +12,16 @@ private:
   int task_id{};
   fstream file;
   Task *task[MAX_TASKS];
+  User *user;
+  string filename;
 public:
-  // Task Saving
-  void loadTasks(); // load saved tasks from disk
-  void saveTask(User &u, Task &t);
+  void saveTask(Task &t);
+  void loadTask(); // load saved tasks from disk
   void deleteTask();
 
-  // Getters and setters
-  //void setFileName(string n){file_name = n;}
+  void openFile(ios_base::openmode om);
+  void setFileName();
+  void setUser(User &u){user = &u;};
+
   static void displayUserTasks(string current_user){}
 };

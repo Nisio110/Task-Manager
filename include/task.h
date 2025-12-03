@@ -1,8 +1,11 @@
 #pragma once
 #include "../include/include.h"
 
+class User;
+
 class Task {
 private:
+  User *u;
   std::string name{"N/a"};
   std::string status{"N/a"};
   std::string description{"N/a"};
@@ -15,6 +18,9 @@ public:
   void saveTask(Task &t);
   void deleteTask();
   void printTaskDetails();
+
+  // its separate i swear
+  void setNumTasks();
 
   // Constructors
   Task();

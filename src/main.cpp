@@ -4,14 +4,23 @@
 #include "../include/ui.h"
 #include "../include/user.h"
 
-inline string dbg() {return "[DEBUG] ";}
-inline string pfx() {return "~ ";}
+string dbg() {return "[DEBUG] ";}
+string pfx() {return "~ ";}
 void testTaskSaving();
 void testUserSaving();
 void program();
 
 int main(){
-    testUserSaving();
+    fstream file("data/User1Tasks.csv");
+    int x = 4;
+    char a[x];
+    file.get(a,x);
+    string id = a;
+    cout << "id = " << id << '\n'; 
+    for (int i = 0; i < x; i++)
+        if (id[i] == '"') id[i] = 0;
+    string clean_id = id;
+    cout << "clean id = " << clean_id << '\n';
     return 0;
 }
 
@@ -20,9 +29,11 @@ void program(){
 }
 
 void testUserSaving(){
+    cout << dbg() << "--- Testing user saving functionality ---\n";
     UserData ud;
     User u("Oisín");
     ud.saveUser(u);
+    cout << dbg() << "------------ Test complete -------------\n";
 }
 
 void testTaskSaving(){
@@ -31,7 +42,7 @@ void testTaskSaving(){
     Task t2("SampleTask_2","A sample task created for testing purposes", "03/12/2025", "pending");
     User u("Oisin");
     TaskData tf;
-    tf.saveTask(u,t);
-    tf.saveTask(u,t2);
+    tf.saveTask(t);
+    tf.saveTask(t2);
     cout << dbg() << "------------ Test complete -------------\n";
 }

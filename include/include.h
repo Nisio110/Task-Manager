@@ -10,5 +10,6 @@ using std::string;
 using std::stringstream;
 using std::fstream;
 using std::ios;
+using std::ios_base;
 string dbg();
 string pfx();
