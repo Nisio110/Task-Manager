@@ -11,7 +11,15 @@ void testUserSaving();
 void program();
 
 int main(){
-    fstream file("data/User1Tasks.csv");
+  fstream file("data/User1Tasks.csv");
+  int temp_num_tasks;
+  while(!file.eof()){
+    temp_num_tasks += 1;
+    cout << "fjlaks;dfjas;dlgjl;k";
+    file.ignore(1e5, '\n');
+  }
+  //file.seekg(1,ios::cur);
+  for (int i; i < temp_num_tasks; i++){
     int x = 4;
     char a[x];
     file.get(a,x);
@@ -21,7 +29,8 @@ int main(){
         if (id[i] == '"') id[i] = 0;
     string clean_id = id;
     cout << "clean id = " << clean_id << '\n';
-    return 0;
+  }
+  return 0;
 }
 
 void program(){

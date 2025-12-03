@@ -47,9 +47,22 @@ void Task::setNumTasks(){
   string fn;
   ss << "data/User" << u->getID() << "Tasks.csv";
   ss >> fn;
+
   fstream file(fn);
-  char a[3];
-  file.get(a,3);
-  string id = a;
-  cout << "id = " << id;
+  int temp_num_tasks;
+  while(!file.eof()){
+    file.seekg('\n');
+    temp_num_tasks += 1;
+  }
+  for (int i; i < temp_num_tasks; ++i){
+    int x = 4;
+    char a[x];
+    file.get(a,x);
+    string id = a;
+    cout << "id = " << id << '\n'; 
+    for (int i = 0; i < x; i++)
+        if (id[i] == '"') id[i] = 0;
+    string clean_id = id;
+    cout << "clean id = " << clean_id << '\n';
+  }
 }
